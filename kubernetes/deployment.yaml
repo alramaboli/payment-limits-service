@@ -2,6 +2,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: payment-limits-service
+  labels:
+    app: payment-limits-service
+    backstage.io/kubernetes-id: payment-limits-service
 spec:
   replicas: 2
   selector:
@@ -11,10 +14,12 @@ spec:
     metadata:
       labels:
         app: payment-limits-service
+        backstage.io/kubernetes-id: payment-limits-service
     spec:
       containers:
         - name: payment-limits-service
-          image: payment-limits-service:latest
+          image: payment-limits-service:local
+          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
           readinessProbe:
