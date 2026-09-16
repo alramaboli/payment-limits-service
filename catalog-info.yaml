@@ -1,0 +1,33 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: payment-limits-service
+  title: payment-limits-service
+  description: Manages customer payment limits
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+  tags:
+    - java
+    - spring-boot
+    - microservice
+spec:
+  type: service
+  lifecycle: experimental
+  owner: group:default/payments-engineering
+  system: system:default/payments
+  providesApis:
+    - payment-limits-service
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: payment-limits-service
+  title: payment-limits-service API
+  description: API provided by payment-limits-service
+spec:
+  type: openapi
+  lifecycle: experimental
+  owner: group:default/payments-engineering
+  system: system:default/payments
+  definition:
+    $text: ./api/openapi.yaml

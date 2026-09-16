@@ -1,0 +1,38 @@
+openapi: 3.0.3
+
+info:
+  title: payment-limits-service API
+  description: Manages customer payment limits
+  version: 1.0.0
+
+servers:
+  - url: http://localhost:8080
+
+paths:
+  /api/status:
+    get:
+      summary: Get service status
+      operationId: getStatus
+      responses:
+        '200':
+          description: Service is operational
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  service:
+                    type: string
+                  status:
+                    type: string
+                  timestamp:
+                    type: string
+                    format: date-time
+
+  /actuator/health:
+    get:
+      summary: Service health
+      operationId: getHealth
+      responses:
+        '200':
+          description: Service is healthy

@@ -1,0 +1,9 @@
+site_name: payment-limits-service
+
+nav:
+  - Overview: index.md
+  - Architecture: architecture.md
+  - Operations: operations.md
+
+plugins:
+  - techdocs-core
