@@ -7,6 +7,7 @@ metadata:
   annotations:
     backstage.io/techdocs-ref: dir:.
     backstage.io/kubernetes-id: payment-limits-service
+    github.com/project-slug: alramaboli/payment-limits-service
   tags:
     - java
     - spring-boot
